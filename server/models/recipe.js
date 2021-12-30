@@ -6,10 +6,10 @@ const recipeSchema = mongoose.Schema(
     name: String,
     description: String,
     imageURL: String,
-    tags: String,
+    tags: [String],
     favourite: Boolean,
-    ingredients: String,
-    instructions: String,
+    ingredients: [String],
+    instructions: [String],
   },
   { versionKey: false }
 );

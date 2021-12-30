@@ -7,8 +7,8 @@ const User = require("../models/user");
 router.post(
   "/login",
   passport.authenticate("local", {
-    successRedirect: "/dashboard",
-    failureRedirect: "/login?error=login",
+    successRedirect: "http://localhost:3000/dashboard",
+    failureRedirect: "http://localhost:3000/login?error=login",
   })
 );
 
@@ -27,7 +27,7 @@ router.post("/register", (req, res, next) => {
 
       newUser.save().then((user) => console.log(user));
 
-      res.redirect("/login");
+      return res.send(newUser); //redirect("/login");
     }
   });
 });
